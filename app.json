@@ -7,6 +7,7 @@
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
+    "scheme": "expo-clerk-auth",
     "splash": {
       "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
@@ -24,6 +25,53 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      [
+        "expo-secure-store",
+        {
+          "configureAndroidBackup": true,
+          "faceIDPermission": "Allow $(PRODUCT_NAME) to access your Face ID biometric data."
+        }
+      ],
+      [
+        "expo-font",
+        {
+          "fonts": [
+            "./assets/fonts/circular.ttf"
+          ],
+          "android": {
+            "fonts": [
+              {
+                "fontFamily": "circular",
+                "fontDefinitions": [
+                  {
+                    "path": "./assets/fonts/circular.ttf",
+                    "weight": 400
+                  },
+                  {
+                    "path": "./assets/fonts/circular-medium.ttf",
+                    "weight": 500
+                  },
+                  {
+                    "path": "./assets/fonts/circular-bold.ttf",
+                    "weight": 700
+                  }
+                ]
+              }
+            ]
+          },
+          "ios": {
+            "fonts": [
+              "./assets/fonts/Inter-Bold.ttf",
+              "./assets/fonts/Inter-BoldItalic.ttf"
+            ]
+          }
+        }
+      ],
+      "expo-router",
+      "expo-secure-store",
+      "expo-web-browser"
+    ]
   }
 }
